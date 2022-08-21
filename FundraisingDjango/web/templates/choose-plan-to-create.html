@@ -1,0 +1,39 @@
+{% extends  'base.html' %}
+{% block main %}
+<main>
+    <section class="py-5 text-center container bg-light">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">請選擇要建立的募資提案類型</h1>
+            </div>
+        </div>
+    </section>
+    <section class="my-5 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="/web/create-plan-for-product">
+                        <div class="card d-flex" style="height:200px;">
+                            <div class="fs-2 card-body align-items-center d-flex justify-content-center">
+                                計畫及商品
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/web/create-plan-for-store">
+                        <div class="card d-flex" style="height:200px;">
+                            <div class="fs-2 card-body align-items-center d-flex justify-content-center">
+                                加盟及分店
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src='/static/js/index.js?{% now "U" %}'></script>
+
+{% endblock %}

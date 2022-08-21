@@ -1,0 +1,19 @@
+$primary: #0FAFE9;
+$danger:#E7F7FD;
+$text-white: #fff;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+.btn-primary {
+    color: $text-white;
+
+    &:hover {
+        color: $text-white;
+    }
+}
+
+.btn-outline-primary {
+    &:hover {
+        color: $text-white;
+    }
+}

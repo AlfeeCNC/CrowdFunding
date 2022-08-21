@@ -1,0 +1,104 @@
+{% extends  'base.html' %}
+{% block main %}
+<main>
+    <section class="py-5 text-center container bg-light">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">轉移投資憑證</h1>
+            </div>
+        </div>
+    </section>
+    <section class="my-5 py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <!-- <div class="rounded border border-secondary py-5 px-5"> -->
+                    <form class="needs-validation" action="" id="transfer-invest-token-form" plan-id="{{plan.id}}"
+                        product-id="{{product.product_id}}">
+                        <ul class="list-group">
+                            <li class="list-group-item py-5 px-5">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>計畫名稱</h6>
+                                        <p>{{plan.title}}</p>
+                                        <h6>項目名稱</h6>
+                                        <p>{{product.title}}</p>
+                                        <p>您擁有的投資憑證數：<span id="user-token">{{token_number}}</span></p>
+                                    </div>
+                                    <div class="col-6">
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6 class="mb-3">
+                                                    <label for="money" class="form-label">
+                                                        請輸入要轉移的投資數量
+                                                    </label>
+                                                </h6>
+                                                <input type="number" class="form-control mb-3" id="erc-amount-input"
+                                                    name="erc-amount-input" placeholder="" required="required">
+                                            </div>
+                                            <div class="col-12">
+                                                <h6 class="mb-3">
+                                                    <label for="money" class="form-label">
+                                                        請輸入對方的錢包地址
+                                                    </label>
+                                                </h6>
+                                                <input type="text" class="form-control" id="transfer-to-address"
+                                                    name="transfer-to-address" placeholder="" required="required">
+                                            </div>
+                                        </div>
+                                        <div id="hint-to-metamask" class="mt-3">請記得先連結您的Metamask</div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="list-group-item py-5 px-5 bg-danger">
+                                <!-- <div class="form-check mb-3">
+                                                        <input type="checkbox" class="form-check-input" id="check-item">
+                                                        <label class="form-check-label" for="check-item">I agree</label>
+                                                    </div> -->
+                                <div class="row">
+                                    <div class="col">
+                                        <button class="w-100 btn btn-outline-primary btn-lg"
+                                            id="connect-metamask-btn">連結Metamask</button>
+                                    </div>
+                                    <div class="col">
+                                        <button class="w-100 btn btn-primary btn-lg" id="checkout-btn">確定轉移</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Modal -->
+<div class="modal fade" id="result-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">結果</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="result-msg">
+                Test
+            </div>
+            <div class="modal-footer">
+                <!-- <a class="btn btn-secondary" href="/">回首頁</a> -->
+                <a class="btn btn-primary" href="/web/member-info">個人頁面</a>
+                <a class="btn btn-outline-primary" href="/">首頁</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Loading -->
+<div id="overlay-loading">
+    <img src="/static/Spin.gif" alt="">
+</div>
+<script src='/static/js/index.js?{% now "U" %}'></script>
+<script src='/static/js/transfer-invest-token.js?{% now "U" %}'></script>
+
+{% endblock %}

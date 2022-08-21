@@ -1,0 +1,240 @@
+{% extends  'base.html' %}
+{% block main %}
+{% load mathfilters %}
+
+<main>
+    <section class="py-5 container">
+        <div class="row py-lg-5">
+            <div class="col-12">
+                <h1 class="fw-light">計畫已結束: {{plan.title}}</h1>
+                <span class="fw-light">計畫發起人</span>
+                <a class="fs-5" href="/web/all-plans/{{initiator}}">{{initiator}}</a>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row gx-5">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="{{plan.image}}" width="100%" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="my-3">
+                    <p class="text-muted">募集總金額</p>
+                    <h2>$ {{plan.current_money}}</h2>
+                </div>
+                <div class="my-3">
+                    <p class="text-muted">贊助人數</p>
+                    <h2>{{investors}} 人</h2>
+                </div>
+                <div class="mt-3">
+                    <p class="text-muted">計畫結束倒數</p>
+                    <h2>--</h2>
+                </div>
+                <div class="my-4">
+                    <button type="button" class="w-100 btn btn-outline-primary btn-lg" data-bs-toggle="modal"
+                        data-bs-target="#record-modal">檢視投資紀錄</button>
+                </div>
+                <div class="my-4">
+                    <button type="button" class="w-100 btn btn-outline-primary btn-lg" data-bs-toggle="modal"
+                        data-bs-target="#sales-modal">檢視販售紀錄</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mt-5 p-5 container bg-light">
+        <div class="row pb-lg-5">
+            <div class="col">
+                <h4 class="fw-light">計畫資訊</h4>
+            </div>
+        </div>
+        <div class="row pb-lg-5 justify-content-center">
+            <div class="col-md-6">
+                <h5 class="fw-light">執行時程</h5>
+                <div class="py-3">
+                    <p class="fs-5">募資期間: <span>{{plan.fundraising_start_date}} - {{plan.fundraising_end_date}}</span>
+                    </p>
+                    <p class="fs-5">募資金額: 已募得 NT$ <span>$ {{plan.current_money}}</span></p>
+                    <p class="fs-5">計畫執行: <span>{{plan.execution_start_date}} - {{plan.execution_end_date}}</span></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5 class="fw-light">售出一件商品之分潤條件</h5>
+                <div class="py-3">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            投資人
+                            <small class="text-muted">{{plan.profitsharing_investor}}%</small>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            計畫發起人
+                            <small class="text-muted">{{plan.profitsharing_initiator}}%</small>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            募資平台
+                            <small class="text-muted">{{plan.profitsharing_platform}}%</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-10">
+                <h5 class="fw-light">ERC-721 ID : <span>{{plan.plan721_id}}</span></h5>
+                <!-- <h5 class="fw-light">Etherscan URL</h5> -->
+                <a href="{{plan.tx_hash}}" target="_blank">{{plan.tx_hash}}</a>
+            </div>
+        </div>
+        <div class="row pb-lg-5">
+            <div class="col">
+                <h4 class="fw-light">發行產品與進度</h4>
+            </div>
+        </div>
+        <div class="row pb-lg-5 row-cols-1 row-cols-md-3 g-4 justify-content-center">
+            {% for data in products %}
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{data.image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{data.title}}</h5>
+                        <p class="card-text">{{data.content}}
+                            <br>
+                            <span>ERC-1155 ID:</span>
+                            <span>
+                                {% if data.product_1155_id %}
+                                {{data.product_1155_id}}
+                                {% else %}
+                                --
+                                {% endif %}
+                            </span>
+                            <br>
+                            <a href="{{data.etherscan_url}}" target="_blank">Etherscan URL</a>
+                        </p>
+
+                        <p class="text-primary">販售價格: ${{data.price}}</p>
+                        <p class="text-primary">已發行數量：{{data.issued_amount}}</p>
+                        <p class="text-primary">已販售數量：{{data.sold_amount}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row pb-lg-5">
+            <div class="col">
+                <h4 class="fw-light">募資計畫介紹</h4>
+            </div>
+        </div>
+        <div class="row pb-lg-5">
+            <div class="col">
+                <p class="plan-content">{{plan.content}}</p>
+            </div>
+        </div>
+        <!-- <div class="row pb-lg-5">
+            <div class="col">
+                <h4 class="fw-light">商品販售紀錄</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">產品編號</th>
+                            <th scope="col">販售個數</th>
+                            <th scope="col">Etherscan URL</th>
+                            <th scope="col">時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in sales_records %}
+                        <tr>
+                            <th scope="row">{{record.product_id}}</th>
+                            <td>{{ record.amount }}</td>
+                            <td><a href="{{record.etherscan_url}}" target="_blank">Etherscan URL</a></td>
+                            <td>{{ record.created_at|date:"Y-m-d h:i" }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div> -->
+
+    </section>
+</main>
+<!-- Invest Modal -->
+<div class="modal fade" id="record-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">此計畫所有投資紀錄</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">產品名稱</th>
+                            <th scope="col">投資金額</th>
+                            <th scope="col">Etherscan URL</th>
+                            <th scope="col">時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in invest_records %}
+                        <tr>
+                            <th scope="row">{{record.product_title}}</th>
+                            <td>{{ record.amount }}</td>
+                            <td><a href="{{record.etherscan_url}}" target="_blank">Etherscan URL</a></td>
+                            <td>{{ record.created_at|date:"Y-m-d h:i" }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉視窗</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sales Modal -->
+<div class="modal fade" id="sales-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">此計畫所有販售紀錄</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">產品名稱</th>
+                            <th scope="col">購買數量</th>
+                            <th scope="col">Etherscan URL</th>
+                            <th scope="col">時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in sales_records %}
+                        <tr>
+                            <th scope="row">{{record.product_title}}</th>
+                            <td>{{ record.amount }}</td>
+                            <td><a href="{{record.etherscan_url}}" target="_blank">Etherscan URL</a></td>
+                            <td>{{ record.created_at|date:"Y-m-d h:i" }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉視窗</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src='/static/js/index.js?{% now "U" %}'></script>
+{% endblock %}

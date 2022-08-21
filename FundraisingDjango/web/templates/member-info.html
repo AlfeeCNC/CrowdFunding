@@ -1,0 +1,96 @@
+{% extends  'base.html' %}
+{% block main %}
+<main>
+    <section class="py-5 text-center container bg-light">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">會員個人資料</h1>
+                <!-- <p class="lead text-muted">Something short and leading about the collection below—its contents, the
+                    creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
+                    entirely.</p>
+                <p>
+                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                </p> -->
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-5 mt-5">
+            <div class="row py-lg-5 justify-content-center">
+                <div class="col-4">
+                    <p class="h4">會員名稱</p>
+                    <p class="fs-4">{{ user.username }}</p>
+                    <p class="h4">會員信箱</p>
+                    <p class="fs-4">{{ user.email }}</p>
+                </div>
+                <div class="col-4 text-center">
+                    <h2>持有的平台幣</h2>
+                    <p><span class="h1 mx-2" id="user-token-amount">0</span>個</p>
+                    <div class="d-grid col-6 mx-auto">
+                        <a href="/web/buy-token" class="btn btn-outline-primary">購買平台幣</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="text-center py-5">
+                    <h1 class="display-6 title-underline">我的提案計畫</h1>
+                </div>
+                <div class="col-5">
+                    <div class="card bg-light mb-3 mx-auto" style="max-width: 20rem;">
+                        <div class="card-body text-center py-5">
+                            <h3 class="card-title mb-3">計畫執行中</h3>
+                            <p class="card-text display-6">{{executing_count}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="card bg-light mb-3 mx-auto" style="max-width: 20rem;">
+                        <div class="card-body text-center py-5">
+                            <h3 class="card-title mb-3">計畫募資中</h3>
+                            <p class="card-text display-6">{{fundraising_count}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <p class="float-end mb-1">
+                        <a href="/web/all-plans/{{user.username}}">我的提案計畫<i
+                                class="fas fa-external-link-alt mx-2"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="text-center py-5">
+                    <h1 class="display-6 title-underline">我的投資計畫</h1>
+                </div>
+                <div class="col-5">
+                    <div class="card bg-danger mb-3 mx-auto" style="max-width: 20rem;">
+                        <div class="card-body text-center py-5">
+                            <h3 class="card-title mb-3">投資計畫數</h3>
+                            <p class="card-text display-6">{{invest_plan_count}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="card bg-danger mb-3 mx-auto" style="max-width: 20rem;">
+                        <div class="card-body text-center py-5">
+                            <h3 class="card-title mb-3">附條件Token數量</h3>
+                            <p class="card-text display-6" id="invest-token-amount"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <p class="float-end mb-1">
+                        <a href="/web/record">前往投資紀錄<i class="fas fa-external-link-alt mx-2"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src='/static/js/index.js?{% now "U" %}'></script>
+{% endblock %}

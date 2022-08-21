@@ -1,0 +1,126 @@
+{% extends  'base.html' %}
+{% block main %}
+{% load mathfilters %}
+
+<main>
+    <section class="py-5 text-center container bg-light">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">{{user.username}}的募資提案紀錄</h1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-5 mt-5">
+            <div class="row py-lg-5 justify-content-center">
+                <div class="col-3 text-center">
+                    <h2>總提案數</h2>
+                    <p><span class="h1 mx-2">{{plan_sum}}</span>個</p>
+                </div>
+                <div class="col-3 text-center">
+                    <h2>募資中</h2>
+                    <p><span class="h1 mx-2">{{ fundraising_plans|length }}</span>個</p>
+                </div>
+                <div class="col-3 text-center">
+                    <h2>執行中</h2>
+                    <p><span class="h1 mx-2">{{ executing_plans|length }}</span>個</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="text-center py-5">
+                    <h1 class="display-6 title-underline">募資中</h1>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                {% for data in fundraising_plans %}
+                <div class="col">
+                    <a class="card-link" href="/web/fundraising-plan/{{data.id}}">
+                        <div class="card h-100">
+                            <img src="{{data.image}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{data.title}}</h5>
+                                <p class="card-text">{{data.content}}</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar"
+                                        style="width: {{ data.current_money|div:data.threshold_amount|mul:100 }}%"
+                                        aria-valuenow="{{ data.current_money|div:data.threshold_amount|mul:100 }}"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>
+                                    <small
+                                        class="text-primary me-2">{{ data.current_money|div:data.threshold_amount|mul:100 |floatformat:2 }}%</small>
+                                    <small class="text-primary">${{data.current_money}}</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row justify-content-center">
+                <div class="text-center py-5">
+                    <h1 class="display-6 title-underline">執行中</h1>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                {% for data in executing_plans %}
+                <div class="col">
+                    <a class="card-link" href="/web/executing-plan/{{data.id}}">
+                        <div class="card h-100">
+                            <img src="{{data.image}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{data.title}}</h5>
+                                <p class="card-text">{{data.content}}</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar"
+                                        style="width: {{ data.current_money|div:data.threshold_amount|mul:100 }}%"
+                                        aria-valuenow="{{ data.current_money|div:data.threshold_amount|mul:100 }}"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>
+                                    <small
+                                        class="text-primary me-2">{{ data.current_money|div:data.threshold_amount|mul:100 |floatformat:2 }}%</small>
+                                    <small class="text-primary">${{data.current_money}}</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row justify-content-center">
+                <div class="text-center py-5">
+                    <h1 class="display-6 title-underline">已結束</h1>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                {% for data in closed_plans %}
+                <div class="col">
+                    <a class="card-link" href="/web/fundraising-plan/{{data.id}}">
+                        <div class="card h-100">
+                            <img src="{{data.image}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{data.title}}</h5>
+                                <p class="card-text">{{data.content}}</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar"
+                                        style="width: {{ data.current_money|div:data.threshold_amount|mul:100 }}%"
+                                        aria-valuenow="{{ data.current_money|div:data.threshold_amount|mul:100 }}"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>
+                                    <small
+                                        class="text-primary me-2">{{ data.current_money|div:data.threshold_amount|mul:100 |floatformat:2 }}%</small>
+                                    <small class="text-primary">${{data.current_money}}</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

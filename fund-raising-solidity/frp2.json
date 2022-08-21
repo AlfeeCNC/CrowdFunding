@@ -1,0 +1,27 @@
+{
+    "description": "FundraisingPlan", 
+    "image": "./images/product1.jpg", 
+    "name": "Cool beverage",
+    "title":"Cool beverage",
+    "content":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, exercitationem.",
+    "type":"food",
+    "fundraisingPlanDuration":{
+        "startDate":"2021/06/30",
+        "endDate":"2021/08/30"
+    },
+    "successThreshold":500000,
+    "target":800000,
+    "officialPlanDuration":{
+        "startDate":"2021/09/01",
+        "endDate":"2021/12/01"
+    },
+    "liquidation":{
+        "date":"2021/11/01",
+        "target":500000
+    },
+    "profitSharingRatio":{
+        "investor":0.5,
+        "initiator":0.3,
+        "platform":0.2
+    }
+}

@@ -1,0 +1,65 @@
+{% extends  'base.html' %}
+{% block main %}
+<main>
+    <section class="py-5 text-center container bg-light">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">購買平台幣</h1>
+            </div>
+        </div>
+    </section>
+    <section class="my-5 py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <!-- <div class="rounded border border-secondary py-5 px-5"> -->
+                    <ul class="list-group">
+                        <li class="list-group-item py-5 px-5">
+                            <form class="needs-validation" novalidate="" id="buy-platform-token-form">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5 class="mb-3">
+                                            <label for="money" class="form-label">
+                                                請輸入要購買的平台幣數量
+                                            </label>
+                                        </h5>
+                                        <input type="number" class="form-control" id="erc-amount-input" placeholder=""
+                                            required="required">
+                                        <div class="invalid-feedback">
+                                            請輸入金額
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div id="hint-to-metamask" class="mt-3">付款前請記得先連結您的Metamask</div>
+                        </li>
+                        <!-- <hr class="my-4"> -->
+                        <li class="list-group-item py-5 px-5 bg-danger">
+                            <!-- <div class="form-check mb-3">
+                                    <input type="checkbox" class="form-check-input" id="check-item">
+                                    <label class="form-check-label" for="check-item">I agree</label>
+                                </div> -->
+                            <div class="row">
+                                <div class="col">
+                                    <button class="w-100 btn btn-outline-primary btn-lg"
+                                        id="connect-metamask-btn">連結Metamask</button>
+                                </div>
+                                <div class="col">
+                                    <button class="w-100 btn btn-primary btn-lg" id="checkout-btn">前往付款</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div id="ecpay-form">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src='/static/js/index.js?{% now "U" %}'></script>
+<script src='/static/js/buy-platform-token.js?{% now "U" %}'></script>
+
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends  'base.html' %}
+{% block main %}
+{% load mathfilters %}
+
+<main>
+    <section class="py-5 container">
+        <div class="row py-lg-5">
+            <div class="col-12">
+                <h1 class="fw-light">投資計畫: {{plan.title}}</h1>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="container">
+        <div class="row gx-5">
+            <div class="col-md-9">
+                <img src="https://picsum.photos/id/39/1080/500" width="100%" alt="">
+
+            </div>
+            <div class="col-md-3">
+                <div class="mt-5">
+                    <p class="text-muted">目標 NTD$ <span class="mx-2">{{plan.threshold_amount}}</span></p>
+                    <h2>$ {{plan.current_money}}</h2>
+                </div>
+                <div class="my-5">
+                    <p class="text-muted">贊助人數</p>
+                    <h2>{{plan.current_investors}} 人</h2>
+                </div>
+                <div class="mb-5">
+                    <p class="text-muted">募資倒數</p>
+                    <h2>{{20}} 天</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="p-5 container bg-light">
+        <div class="row pb-lg-5">
+            <div class="col">
+                <h4 class="fw-light">募資計畫介紹</h4>
+            </div>
+        </div>
+        <div class="row pb-lg-5">
+            <div class="col">
+                <p class="plan-content">{{plan.content}}</p>
+            </div>
+        </div>
+        <div class="row pb-lg-5">
+            <div class="col">
+                <h4 class="fw-light">預計發行產品</h4>
+            </div>
+        </div>
+        <form action="" id="invest-products-form" plan-id="{{plan.id}}">
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                {% for data in products %}
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{data.image}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{data.title}}</h5>
+                            <p class="card-text">{{data.content}}</p>
+                            {% if plan.category == "計畫及商品" %}
+                            <p class="text-primary">販售價格: ${{data.price}}</p>
+                            {% endif %}
+                            <div class="my-3">
+                                <input type="number" class="form-control bg-transparent"
+                                    id="{{data.plan_id}}-{{data.product_id}}"
+                                    name="{{data.plan_id}}-{{data.product_id}}" placeholder="請輸入投資金額">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <input type="hidden" id="wallet_address" name="wallet_address" value="">
+            <div class="row p-lg-5">
+                <div class="col-md-5 text-center">
+                    <p class="h5 fw-light my-3">投資總計: <span class="mx-2" id="invest-total">0</span></p>
+                    <p class="h5 fw-light my-3">持有的平台幣: <span class="mx-2" id="user-token-amount">0</span></p>
+                </div>
+                <div class="col-md-7 pt-4 text-center">
+                    <a href="/web/buy-token" class="btn btn-outline-primary btn-lg m-2">前往購買平台幣</a>
+                    <button class="btn btn-primary btn-lg m-2" id="checkout-btn" type="submit">確定投資此計畫</button>
+                </div>
+            </div>
+        </form>
+    </section>
+</main>
+<!-- Modal -->
+<div class="modal fade" id="result-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">結果</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="result-msg">
+                Test
+            </div>
+            <div class="modal-footer">
+                <!-- <a class="btn btn-secondary" href="/">回首頁</a> -->
+                <a class="btn btn-primary" href="/web/member-info">個人頁面</a>
+                <a class="btn btn-outline-primary" href="/">首頁</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Loading -->
+<div id="overlay-loading">
+    <img src="/static/Spin.gif" alt="">
+</div>
+<script src='/static/js/index.js?{% now "U" %}'></script>
+<script src='/static/js/invest-plan.js?{% now "U" %}'></script>
+{% endblock %}

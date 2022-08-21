@@ -1,0 +1,289 @@
+[2021-08-31 19:49:07,347: INFO/MainProcess] Connected to redis://localhost:6379//
+[2021-08-31 19:49:07,365: INFO/MainProcess] mingle: searching for neighbors
+[2021-08-31 19:49:08,389: INFO/MainProcess] mingle: all alone
+[2021-08-31 19:49:08,412: WARNING/MainProcess] /Users/elsie/opt/anaconda3/envs/django/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2021-08-31 19:49:08,412: INFO/MainProcess] celery@Elsiede-MacBook.local ready.
+[2021-08-31 19:50:19,365: INFO/MainProcess] Task print_msg_main[27fc7a45-f50b-43f7-873f-e5ce6bb656d8] received
+[2021-08-31 19:50:19,368: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello World
+[2021-08-31 19:50:19,372: INFO/MainProcess] Task print_time[781f9958-1a31-4ac8-92c0-261ab2d1ca01] received
+[2021-08-31 19:50:19,372: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:50:19,379: WARNING/ForkPoolWorker-3] Current Time is 19:50:19
+[2021-08-31 19:50:19,381: WARNING/ForkPoolWorker-3] 
+
+[2021-08-31 19:50:19,389: INFO/ForkPoolWorker-1] Task print_msg_main[27fc7a45-f50b-43f7-873f-e5ce6bb656d8] succeeded in 0.021725454000005584s: None
+[2021-08-31 19:50:19,397: INFO/ForkPoolWorker-3] Task print_time[781f9958-1a31-4ac8-92c0-261ab2d1ca01] succeeded in 0.021024175999997397s: None
+[2021-08-31 19:50:23,004: INFO/MainProcess] Task get_calculation[ea85a8a2-8245-4cea-9493-db4fc543b8ff] received
+[2021-08-31 19:50:23,009: INFO/ForkPoolWorker-1] Task get_calculation[ea85a8a2-8245-4cea-9493-db4fc543b8ff] succeeded in 0.002163023999997904s: 30
+[2021-08-31 19:56:20,079: INFO/MainProcess] Task print_msg_main[1a23529c-3002-4ac6-b7d6-b3edf191aa94] received
+[2021-08-31 19:56:20,080: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:56:20,080: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:56:20,082: INFO/ForkPoolWorker-1] Task print_msg_main[1a23529c-3002-4ac6-b7d6-b3edf191aa94] succeeded in 0.002546327000004567s: None
+[2021-08-31 19:56:29,067: INFO/MainProcess] Connected to redis://localhost:6379//
+[2021-08-31 19:56:29,084: INFO/MainProcess] mingle: searching for neighbors
+[2021-08-31 19:56:30,048: INFO/MainProcess] Task print_time[ee3c11cb-1ec4-48cf-bac0-76b4a215a553] received
+[2021-08-31 19:56:30,050: WARNING/ForkPoolWorker-1] Current Time is 19:56:30
+[2021-08-31 19:56:30,050: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:56:30,052: INFO/MainProcess] Task print_msg_main[cb9540ee-0f16-47f1-9fca-da7c34d18298] received
+[2021-08-31 19:56:30,052: INFO/ForkPoolWorker-1] Task print_time[ee3c11cb-1ec4-48cf-bac0-76b4a215a553] succeeded in 0.003420129000005545s: None
+[2021-08-31 19:56:30,053: WARNING/ForkPoolWorker-3] Celery is working!! Message is Hello
+[2021-08-31 19:56:30,054: WARNING/ForkPoolWorker-3] 
+
+[2021-08-31 19:56:30,056: INFO/ForkPoolWorker-3] Task print_msg_main[cb9540ee-0f16-47f1-9fca-da7c34d18298] succeeded in 0.0027140590000271914s: None
+[2021-08-31 19:56:30,123: INFO/MainProcess] mingle: all alone
+[2021-08-31 19:56:30,146: WARNING/MainProcess] /Users/elsie/opt/anaconda3/envs/django/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2021-08-31 19:56:30,146: INFO/MainProcess] celery@Elsiede-MacBook.local ready.
+[2021-08-31 19:56:40,051: INFO/MainProcess] Task print_msg_main[85717991-58e4-4da1-ac8d-d4a20fe40502] received
+[2021-08-31 19:56:40,052: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:56:40,053: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:56:40,054: INFO/ForkPoolWorker-1] Task print_msg_main[85717991-58e4-4da1-ac8d-d4a20fe40502] succeeded in 0.0018140279999556697s: None
+[2021-08-31 19:56:50,049: INFO/MainProcess] Task get_calculation[3577300c-7648-4a22-b000-8b8f62996ad4] received
+[2021-08-31 19:56:50,051: INFO/ForkPoolWorker-1] Task get_calculation[3577300c-7648-4a22-b000-8b8f62996ad4] succeeded in 0.0010486759999821516s: 30
+[2021-08-31 19:56:50,053: INFO/MainProcess] Task print_time[1ff675b8-353c-425f-9f9d-714a3f1a5655] received
+[2021-08-31 19:56:50,054: INFO/MainProcess] Task print_msg_main[e9da87f0-9580-49b8-8daf-6469412e78ee] received
+[2021-08-31 19:56:50,055: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:56:50,056: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:56:50,056: WARNING/ForkPoolWorker-1] Current Time is 19:56:50
+[2021-08-31 19:56:50,057: INFO/ForkPoolWorker-1] Task print_msg_main[e9da87f0-9580-49b8-8daf-6469412e78ee] succeeded in 0.002241920000017217s: None
+[2021-08-31 19:56:50,057: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:56:50,064: INFO/ForkPoolWorker-1] Task print_time[1ff675b8-353c-425f-9f9d-714a3f1a5655] succeeded in 0.00963365399999816s: None
+[2021-08-31 19:57:00,055: INFO/MainProcess] Task print_msg_main[1b162ac7-1db2-4f7a-ad33-8fc91dd4bd60] received
+[2021-08-31 19:57:00,056: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:57:00,056: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:57:00,058: INFO/ForkPoolWorker-1] Task print_msg_main[1b162ac7-1db2-4f7a-ad33-8fc91dd4bd60] succeeded in 0.002221388999998908s: None
+[2021-08-31 19:57:10,052: INFO/MainProcess] Task print_time[a383d066-a6d6-441f-a527-86329a366d35] received
+[2021-08-31 19:57:10,053: WARNING/ForkPoolWorker-1] Current Time is 19:57:10
+[2021-08-31 19:57:10,054: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:57:10,054: INFO/MainProcess] Task print_msg_main[cd58fabc-45e8-468b-91c0-47ee024bc574] received
+[2021-08-31 19:57:10,055: INFO/ForkPoolWorker-1] Task print_time[a383d066-a6d6-441f-a527-86329a366d35] succeeded in 0.002306824999998014s: None
+[2021-08-31 19:57:10,055: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:57:10,056: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:57:10,057: INFO/ForkPoolWorker-1] Task print_msg_main[cd58fabc-45e8-468b-91c0-47ee024bc574] succeeded in 0.0018917680000072323s: None
+[2021-08-31 19:57:20,054: INFO/MainProcess] Task print_msg_main[dfd8a8d1-a9da-44c3-aaf6-b1ff77a956c8] received
+[2021-08-31 19:57:20,055: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:57:20,056: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:57:20,057: INFO/ForkPoolWorker-1] Task print_msg_main[dfd8a8d1-a9da-44c3-aaf6-b1ff77a956c8] succeeded in 0.001971429999969132s: None
+[2021-08-31 19:57:30,050: INFO/MainProcess] Task get_calculation[1bc21ebd-4fb6-48d5-a5e0-d6ed2247e146] received
+[2021-08-31 19:57:30,053: INFO/ForkPoolWorker-1] Task get_calculation[1bc21ebd-4fb6-48d5-a5e0-d6ed2247e146] succeeded in 0.0013356669999780024s: 30
+[2021-08-31 19:57:30,057: INFO/MainProcess] Task print_time[95271410-8c4b-4600-8f9e-3887631501c3] received
+[2021-08-31 19:57:30,059: WARNING/ForkPoolWorker-1] Current Time is 19:57:30
+[2021-08-31 19:57:30,059: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:57:30,060: INFO/MainProcess] Task print_msg_main[9d4caac1-ebc6-4a70-8902-cb4ee99d0361] received
+[2021-08-31 19:57:30,061: INFO/ForkPoolWorker-1] Task print_time[95271410-8c4b-4600-8f9e-3887631501c3] succeeded in 0.0026001200000109748s: None
+[2021-08-31 19:57:30,061: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:57:30,062: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:57:30,065: INFO/ForkPoolWorker-1] Task print_msg_main[9d4caac1-ebc6-4a70-8902-cb4ee99d0361] succeeded in 0.004270940000026258s: None
+[2021-08-31 19:57:40,056: INFO/MainProcess] Task print_msg_main[e04a30aa-ddae-428d-afd6-bfdaac682a5e] received
+[2021-08-31 19:57:40,057: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:57:40,058: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:57:40,059: INFO/ForkPoolWorker-1] Task print_msg_main[e04a30aa-ddae-428d-afd6-bfdaac682a5e] succeeded in 0.0017313680000086151s: None
+[2021-08-31 19:57:50,053: INFO/MainProcess] Task print_time[4f829b0e-98f5-49a9-a9f1-a6728d61528c] received
+[2021-08-31 19:57:50,055: WARNING/ForkPoolWorker-1] Current Time is 19:57:50
+[2021-08-31 19:57:50,055: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:57:50,056: INFO/MainProcess] Task print_msg_main[3c2c983b-1f2f-4265-afd9-8f47e8fff9b1] received
+[2021-08-31 19:57:50,057: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:57:50,057: INFO/ForkPoolWorker-1] Task print_time[4f829b0e-98f5-49a9-a9f1-a6728d61528c] succeeded in 0.0024495629999989887s: None
+[2021-08-31 19:57:50,057: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:57:50,059: INFO/ForkPoolWorker-1] Task print_msg_main[3c2c983b-1f2f-4265-afd9-8f47e8fff9b1] succeeded in 0.0019388209999533501s: None
+[2021-08-31 19:58:00,056: INFO/MainProcess] Task print_msg_main[91fc6ce3-283f-49e7-b079-827a76e2d638] received
+[2021-08-31 19:58:00,057: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:58:00,058: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:58:00,059: INFO/ForkPoolWorker-1] Task print_msg_main[91fc6ce3-283f-49e7-b079-827a76e2d638] succeeded in 0.0015511240000023463s: None
+[2021-08-31 19:58:10,048: INFO/MainProcess] Task get_calculation[569172ed-97dd-4061-949e-eecda74057a8] received
+[2021-08-31 19:58:10,050: INFO/ForkPoolWorker-1] Task get_calculation[569172ed-97dd-4061-949e-eecda74057a8] succeeded in 0.0010614400000577007s: 30
+[2021-08-31 19:58:10,053: INFO/MainProcess] Task print_time[c77c8657-ff5a-4849-b317-0c95622f53f9] received
+[2021-08-31 19:58:10,054: WARNING/ForkPoolWorker-1] Current Time is 19:58:10
+[2021-08-31 19:58:10,054: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:58:10,056: INFO/ForkPoolWorker-1] Task print_time[c77c8657-ff5a-4849-b317-0c95622f53f9] succeeded in 0.0019724520000039547s: None
+[2021-08-31 19:58:10,056: INFO/MainProcess] Task print_msg_main[4b53dea6-65fa-4b65-972e-3c082aa7f724] received
+[2021-08-31 19:58:10,057: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:58:10,058: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:58:10,058: INFO/ForkPoolWorker-1] Task print_msg_main[4b53dea6-65fa-4b65-972e-3c082aa7f724] succeeded in 0.0014627699999891774s: None
+[2021-08-31 19:58:20,057: INFO/MainProcess] Task print_msg_main[ddf403b3-4faf-44cf-abb6-77fc704bdf56] received
+[2021-08-31 19:58:20,058: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:58:20,058: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:58:20,059: INFO/ForkPoolWorker-1] Task print_msg_main[ddf403b3-4faf-44cf-abb6-77fc704bdf56] succeeded in 0.0016255049999926996s: None
+[2021-08-31 19:58:30,053: INFO/MainProcess] Task print_time[c84fada0-043b-4afb-850f-b5fea1ad9b3d] received
+[2021-08-31 19:58:30,054: WARNING/ForkPoolWorker-1] Current Time is 19:58:30
+[2021-08-31 19:58:30,055: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:58:30,057: INFO/MainProcess] Task print_msg_main[39e85a95-7357-4434-9dee-30b2dbbeb1ca] received
+[2021-08-31 19:58:30,057: INFO/ForkPoolWorker-1] Task print_time[c84fada0-043b-4afb-850f-b5fea1ad9b3d] succeeded in 0.002636718999994514s: None
+[2021-08-31 19:58:30,058: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:58:30,058: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:58:30,059: INFO/ForkPoolWorker-1] Task print_msg_main[39e85a95-7357-4434-9dee-30b2dbbeb1ca] succeeded in 0.0017277120000471768s: None
+[2021-08-31 19:58:40,058: INFO/MainProcess] Task print_msg_main[db9331a4-68a1-4463-af64-01424adad44b] received
+[2021-08-31 19:58:40,059: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:58:40,059: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:58:40,060: INFO/ForkPoolWorker-1] Task print_msg_main[db9331a4-68a1-4463-af64-01424adad44b] succeeded in 0.0015644530000145096s: None
+[2021-08-31 19:58:50,049: INFO/MainProcess] Task get_calculation[958ea245-0d11-4432-8f3b-d2e2fc8f5b76] received
+[2021-08-31 19:58:50,051: INFO/ForkPoolWorker-1] Task get_calculation[958ea245-0d11-4432-8f3b-d2e2fc8f5b76] succeeded in 0.0009822549999398689s: 30
+[2021-08-31 19:58:50,053: INFO/MainProcess] Task print_time[4bb3e9b0-8b7c-4e9c-9bb9-bd5e06d74818] received
+[2021-08-31 19:58:50,054: WARNING/ForkPoolWorker-1] Current Time is 19:58:50
+[2021-08-31 19:58:50,055: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:58:50,056: INFO/ForkPoolWorker-1] Task print_time[4bb3e9b0-8b7c-4e9c-9bb9-bd5e06d74818] succeeded in 0.0023288859999865963s: None
+[2021-08-31 19:58:50,057: INFO/MainProcess] Task print_msg_main[424e9870-cdde-4934-be28-30b01e3b9ef2] received
+[2021-08-31 19:58:50,058: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:58:50,058: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:58:50,059: INFO/ForkPoolWorker-1] Task print_msg_main[424e9870-cdde-4934-be28-30b01e3b9ef2] succeeded in 0.0014634330000262707s: None
+[2021-08-31 19:59:00,056: INFO/MainProcess] Task print_msg_main[9660401a-e7cb-4961-a73a-bb40e0f17548] received
+[2021-08-31 19:59:00,057: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:59:00,057: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:59:00,058: INFO/ForkPoolWorker-1] Task print_msg_main[9660401a-e7cb-4961-a73a-bb40e0f17548] succeeded in 0.0015310789999603003s: None
+[2021-08-31 19:59:10,053: INFO/MainProcess] Task print_time[e9c30807-d185-4a8d-a956-d9893bee3bc7] received
+[2021-08-31 19:59:10,055: WARNING/ForkPoolWorker-1] Current Time is 19:59:10
+[2021-08-31 19:59:10,055: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:59:10,057: INFO/MainProcess] Task print_msg_main[7e3f56f9-c6d9-4f4a-b36b-effd21b3c2f9] received
+[2021-08-31 19:59:10,057: INFO/ForkPoolWorker-1] Task print_time[e9c30807-d185-4a8d-a956-d9893bee3bc7] succeeded in 0.0031841610000356013s: None
+[2021-08-31 19:59:10,058: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:59:10,059: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:59:10,060: INFO/ForkPoolWorker-1] Task print_msg_main[7e3f56f9-c6d9-4f4a-b36b-effd21b3c2f9] succeeded in 0.0015027430000031927s: None
+[2021-08-31 19:59:20,057: INFO/MainProcess] Task print_msg_main[4edc3e85-281d-4c86-a46d-2cf4099e1ed2] received
+[2021-08-31 19:59:20,058: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:59:20,058: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:59:20,060: INFO/ForkPoolWorker-1] Task print_msg_main[4edc3e85-281d-4c86-a46d-2cf4099e1ed2] succeeded in 0.0018274690000055216s: None
+[2021-08-31 19:59:30,051: INFO/MainProcess] Task get_calculation[adbc36bf-70af-4a89-b45a-eba9e3de355b] received
+[2021-08-31 19:59:30,053: INFO/ForkPoolWorker-1] Task get_calculation[adbc36bf-70af-4a89-b45a-eba9e3de355b] succeeded in 0.0009734470000068995s: 30
+[2021-08-31 19:59:30,054: INFO/MainProcess] Task print_time[391302d0-a590-4d82-8a96-f75850202442] received
+[2021-08-31 19:59:30,058: WARNING/ForkPoolWorker-1] Current Time is 19:59:30
+[2021-08-31 19:59:30,058: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:59:30,059: INFO/MainProcess] Task print_msg_main[a09e33a2-422d-47ec-b5a5-077265a8d05a] received
+[2021-08-31 19:59:30,060: INFO/ForkPoolWorker-1] Task print_time[391302d0-a590-4d82-8a96-f75850202442] succeeded in 0.004130057999987002s: None
+[2021-08-31 19:59:30,060: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:59:30,060: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:59:30,062: INFO/ForkPoolWorker-1] Task print_msg_main[a09e33a2-422d-47ec-b5a5-077265a8d05a] succeeded in 0.0017453439999997045s: None
+[2021-08-31 19:59:40,057: INFO/MainProcess] Task print_msg_main[5d7f8ac7-b102-4bba-9a31-0a587696fa95] received
+[2021-08-31 19:59:40,058: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:59:40,058: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:59:40,059: INFO/ForkPoolWorker-1] Task print_msg_main[5d7f8ac7-b102-4bba-9a31-0a587696fa95] succeeded in 0.0015335309999500168s: None
+[2021-08-31 19:59:50,056: INFO/MainProcess] Task print_time[1a5761ad-af4c-438d-8aca-e6b2cf144e7b] received
+[2021-08-31 19:59:50,059: WARNING/ForkPoolWorker-1] Current Time is 19:59:50
+[2021-08-31 19:59:50,060: INFO/MainProcess] Task print_msg_main[d06e9b38-ca82-43be-9c76-5895c4ce45d3] received
+[2021-08-31 19:59:50,060: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:59:50,063: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 19:59:50,064: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 19:59:50,066: INFO/ForkPoolWorker-1] Task print_time[1a5761ad-af4c-438d-8aca-e6b2cf144e7b] succeeded in 0.0075898009999946225s: None
+[2021-08-31 19:59:50,066: INFO/ForkPoolWorker-1] Task print_msg_main[d06e9b38-ca82-43be-9c76-5895c4ce45d3] succeeded in 0.002858793999990894s: None
+[2021-08-31 20:00:00,058: INFO/MainProcess] Task print_msg_main[efa3eea2-8d4c-4ce3-a649-e8fbbf734ffa] received
+[2021-08-31 20:00:00,059: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 20:00:00,060: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 20:00:00,064: INFO/ForkPoolWorker-1] Task print_msg_main[efa3eea2-8d4c-4ce3-a649-e8fbbf734ffa] succeeded in 0.004424272999983714s: None
+[2021-08-31 20:00:10,049: INFO/MainProcess] Task get_calculation[2736a503-53ca-467e-9779-655f63dfbe7e] received
+[2021-08-31 20:00:10,053: INFO/ForkPoolWorker-1] Task get_calculation[2736a503-53ca-467e-9779-655f63dfbe7e] succeeded in 0.0028337880000037785s: 30
+[2021-08-31 20:00:10,055: INFO/MainProcess] Task print_time[7b9fd60d-9ece-414f-abc9-8b3abbba5037] received
+[2021-08-31 20:00:10,057: WARNING/ForkPoolWorker-1] Current Time is 20:00:10
+[2021-08-31 20:00:10,057: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 20:00:10,058: INFO/MainProcess] Task print_msg_main[efce5362-c246-4031-8d33-21b3df634dee] received
+[2021-08-31 20:00:10,059: INFO/ForkPoolWorker-1] Task print_time[7b9fd60d-9ece-414f-abc9-8b3abbba5037] succeeded in 0.0025112859999580905s: None
+[2021-08-31 20:00:10,059: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 20:00:10,061: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 20:00:10,063: INFO/ForkPoolWorker-1] Task print_msg_main[efce5362-c246-4031-8d33-21b3df634dee] succeeded in 0.0037772869999912473s: None
+[2021-08-31 20:00:20,058: INFO/MainProcess] Task print_msg_main[167a3de7-bc63-42a4-a919-000c1b20ca03] received
+[2021-08-31 20:00:20,059: WARNING/ForkPoolWorker-1] Celery is working!! Message is Hello
+[2021-08-31 20:00:20,059: WARNING/ForkPoolWorker-1] 
+
+[2021-08-31 20:00:20,060: INFO/ForkPoolWorker-1] Task print_msg_main[167a3de7-bc63-42a4-a919-000c1b20ca03] succeeded in 0.0014817069999821797s: None
+[2021-08-31 21:41:29,058: INFO/MainProcess] Connected to redis://localhost:6379//
+[2021-08-31 21:41:29,075: INFO/MainProcess] mingle: searching for neighbors
+[2021-08-31 21:41:30,103: INFO/MainProcess] mingle: all alone
+[2021-08-31 21:41:30,123: WARNING/MainProcess] /Users/elsie/opt/anaconda3/envs/django/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2021-08-31 21:41:30,123: INFO/MainProcess] celery@Elsiede-MacBook.local ready.
+[2021-08-31 21:41:42,966: INFO/MainProcess] Task add_new_data_to_db[db8f207f-3a61-4c21-b221-df2102222ce8] received
+[2021-08-31 21:41:43,203: INFO/ForkPoolWorker-1] Task add_new_data_to_db[db8f207f-3a61-4c21-b221-df2102222ce8] succeeded in 0.23542454099999865s: None
+[2021-08-31 21:42:02,940: INFO/MainProcess] Task add_new_data_to_db[fc8a1b59-a4f1-42de-a456-b3e8ed717f6d] received
+[2021-08-31 21:42:02,983: INFO/ForkPoolWorker-1] Task add_new_data_to_db[fc8a1b59-a4f1-42de-a456-b3e8ed717f6d] succeeded in 0.04120726800000085s: None
+[2021-08-31 23:46:17,285: INFO/MainProcess] Connected to redis://localhost:6379//
+[2021-08-31 23:46:17,324: INFO/MainProcess] mingle: searching for neighbors
+[2021-08-31 23:46:18,358: INFO/MainProcess] mingle: all alone
+[2021-08-31 23:46:18,383: WARNING/MainProcess] /Users/elsie/opt/anaconda3/envs/django/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2021-08-31 23:46:18,383: INFO/MainProcess] celery@Elsiede-MacBook.local ready.
+[2021-08-31 23:46:18,387: INFO/MainProcess] Task add_new_data_to_db[e142b26a-36f3-4a3d-be52-dfacb068c050] received
+[2021-08-31 23:46:18,388: INFO/MainProcess] Task add_new_data_to_db[6e3399c6-a594-4c95-b919-07cf22fa3025] received
+[2021-08-31 23:46:18,390: INFO/MainProcess] Task add_new_data_to_db[28b05e81-fa65-4a95-9cab-6b549d38e445] received
+[2021-08-31 23:46:18,398: INFO/ForkPoolWorker-3] Task add_new_data_to_db[6e3399c6-a594-4c95-b919-07cf22fa3025] succeeded in 0.00752874499999967s: None
+[2021-08-31 23:46:18,398: INFO/ForkPoolWorker-1] Task add_new_data_to_db[e142b26a-36f3-4a3d-be52-dfacb068c050] succeeded in 0.00806868500000002s: None
+[2021-08-31 23:46:18,400: INFO/ForkPoolWorker-2] Task add_new_data_to_db[28b05e81-fa65-4a95-9cab-6b549d38e445] succeeded in 0.007731111000000013s: None
+[2021-08-31 23:46:28,261: INFO/MainProcess] Task add_new_data_to_db[1a972892-6f0d-4b77-a279-c11d85baeac0] received
+[2021-08-31 23:46:28,263: INFO/ForkPoolWorker-1] Task add_new_data_to_db[1a972892-6f0d-4b77-a279-c11d85baeac0] succeeded in 0.0011754979999984982s: None
+[2021-08-31 23:46:38,261: INFO/MainProcess] Task add_new_data_to_db[3d5b5b3a-b1e2-4f96-9907-08ff8830c3e0] received
+[2021-08-31 23:46:38,263: INFO/ForkPoolWorker-1] Task add_new_data_to_db[3d5b5b3a-b1e2-4f96-9907-08ff8830c3e0] succeeded in 0.0013328379999997253s: None
+[2021-08-31 23:46:48,260: INFO/MainProcess] Task add_new_data_to_db[7c4572e4-a767-4c73-8476-8963f9442ed3] received
+[2021-08-31 23:46:48,262: INFO/ForkPoolWorker-1] Task add_new_data_to_db[7c4572e4-a767-4c73-8476-8963f9442ed3] succeeded in 0.0011991510000015637s: None
+[2021-08-31 23:46:58,261: INFO/MainProcess] Task add_new_data_to_db[6935f475-8b10-49da-9ef4-87499611a684] received
+[2021-08-31 23:46:58,262: INFO/ForkPoolWorker-1] Task add_new_data_to_db[6935f475-8b10-49da-9ef4-87499611a684] succeeded in 0.0009664329999949928s: None
+[2021-08-31 23:47:08,261: INFO/MainProcess] Task add_new_data_to_db[ae3967ac-bc87-498e-a5ff-41e5fa9b7e94] received
+[2021-08-31 23:47:08,264: INFO/ForkPoolWorker-1] Task add_new_data_to_db[ae3967ac-bc87-498e-a5ff-41e5fa9b7e94] succeeded in 0.0009726330000034977s: None
+[2021-08-31 23:47:18,261: INFO/MainProcess] Task add_new_data_to_db[e9215457-b904-4959-a35e-c9090cc0c9c9] received
+[2021-08-31 23:47:18,263: INFO/ForkPoolWorker-1] Task add_new_data_to_db[e9215457-b904-4959-a35e-c9090cc0c9c9] succeeded in 0.0010531109999973864s: None
+[2021-08-31 23:47:28,261: INFO/MainProcess] Task add_new_data_to_db[2a782228-bfce-4a09-bf1a-355c96f2dd35] received
+[2021-08-31 23:47:28,262: INFO/ForkPoolWorker-1] Task add_new_data_to_db[2a782228-bfce-4a09-bf1a-355c96f2dd35] succeeded in 0.0009157329999993635s: None
+[2021-08-31 23:47:38,261: INFO/MainProcess] Task add_new_data_to_db[c77b91c9-627c-4296-8ede-6ff9d7bb1b3a] received
+[2021-08-31 23:47:38,263: INFO/ForkPoolWorker-1] Task add_new_data_to_db[c77b91c9-627c-4296-8ede-6ff9d7bb1b3a] succeeded in 0.0010639460000021472s: None
+[2021-08-31 23:47:48,261: INFO/MainProcess] Task add_new_data_to_db[c1585e67-f8fa-4770-8dc7-315ea758ba96] received
+[2021-08-31 23:47:48,264: INFO/ForkPoolWorker-1] Task add_new_data_to_db[c1585e67-f8fa-4770-8dc7-315ea758ba96] succeeded in 0.0013568870000000288s: None
+[2021-08-31 23:48:02,596: INFO/MainProcess] Connected to redis://localhost:6379//
+[2021-08-31 23:48:02,618: INFO/MainProcess] mingle: searching for neighbors
+[2021-08-31 23:48:03,661: INFO/MainProcess] mingle: all alone
+[2021-08-31 23:48:03,700: WARNING/MainProcess] /Users/elsie/opt/anaconda3/envs/django/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2021-08-31 23:48:03,701: INFO/MainProcess] celery@Elsiede-MacBook.local ready.
+[2021-08-31 23:48:08,762: INFO/MainProcess] Task add_new_data_to_db[1b9bb99e-d250-424e-9280-99dccbfe1a3b] received
+[2021-08-31 23:48:08,803: INFO/ForkPoolWorker-1] Task add_new_data_to_db[1b9bb99e-d250-424e-9280-99dccbfe1a3b] succeeded in 0.039405269999999604s: None
+[2021-08-31 23:48:18,737: INFO/MainProcess] Task add_new_data_to_db[6ea16a56-145e-493f-bf9c-1b43239382e6] received
+[2021-08-31 23:48:18,758: INFO/ForkPoolWorker-1] Task add_new_data_to_db[6ea16a56-145e-493f-bf9c-1b43239382e6] succeeded in 0.020643250000002666s: None
+[2021-09-01 17:58:37,575: INFO/MainProcess] Connected to redis://localhost:6379//
+[2021-09-01 17:58:37,587: INFO/MainProcess] mingle: searching for neighbors
+[2021-09-01 17:58:38,612: INFO/MainProcess] mingle: all alone
+[2021-09-01 17:58:38,641: WARNING/MainProcess] /Users/elsie/opt/anaconda3/envs/django/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2021-09-01 17:58:38,641: INFO/MainProcess] celery@Elsiede-MacBook.local ready.

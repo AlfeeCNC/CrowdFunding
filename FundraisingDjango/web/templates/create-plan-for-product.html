@@ -1,0 +1,353 @@
+{% extends  'base.html' %}
+{% block main %}
+<main>
+    <section class="py-5 text-center container bg-light">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">建立計畫及商品募資提案</h1>
+            </div>
+        </div>
+    </section>
+    <section class="my-5 py-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div class="alert alert-info hidden mb-4" role="alert" id="balance-alert">
+                        您持有的平台幣低於發行計畫之手續費，請先儲值平台幣。
+                    </div>
+                    <div class="alert alert-info hidden mb-4" role="alert" id="wallet-alert">
+                        請先連結您的Metamask。
+                        <button class="btn btn-outline-dark" id="connect-metamask-btn">連結Metamask</button>
+                    </div>
+                    <form method="post" id="create-plan-for-product-form">
+                        <div class="row g-3 mb-3">
+                            <div class="col-12">
+                                <label for="title" class="form-label">募資標題</label>
+                                <input type="hidden" name="initiator_id" id="initiator_id" value="{{user.id}}">
+                                <input type="hidden" name="wallet_address" id="wallet_address" value="">
+                                <input type="text" class="form-control" id="title" name="title" placeholder="" value=""
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    Title is required.
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="mb-3">
+                                    <label for="threshold_amount" class="form-label">門檻金額</label>
+                                    <input type="number" class="form-control" id="threshold_amount"
+                                        name="threshold_amount" placeholder="最低募資門檻金額" value="" required="required">
+                                    <div class="invalid-feedback">
+                                        Threshold amount is required.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="target_amount" class="form-label">目標金額</label>
+                                    <input type="number" class="form-control" id="target_amount" name="target_amount"
+                                        placeholder="最高募資目標金額" value="" required="required">
+                                    <div class="invalid-feedback">
+                                        Target amount is required.
+                                    </div>
+                                </div>
+                                <!-- <div class="mb-3">
+                                    <label for="category" class="form-label">計畫類型</label>
+                                    <select class="form-select" aria-label="Default select example" id="category"
+                                        name="category">
+                                        <option selected value="tech">科技產品</option>
+                                        <option value="design">設計類型</option>
+                                        <option value="franchise">加盟計畫</option>
+                                        <option value="activity">活動計畫</option>
+                                        <option value="others">其他類型</option>
+                                    </select>
+                                </div> -->
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="mb-3">
+                                    <label for="fundraising_period" class="form-label">計畫募資期間</label>
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-auto">
+                                            <label for="fundraising_start_date" class="col-form-label">起始日</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="date" class="w-100 form-control" id="fundraising_start_date"
+                                                name="fundraising_start_date">
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="fundraising_end_date" class="col-form-label">結束日</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="date" class="form-control" id="fundraising_end_date"
+                                                name="fundraising_end_date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="execution_period" class="form-label">計畫執行期間</label>
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-auto">
+                                            <label for="execution_start_date" class="col-form-label">起始日</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="date" class="form-control" id="execution_start_date"
+                                                name="execution_start_date">
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="execution_end_date" class="col-form-label">結束日</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="date" class="form-control" id="execution_end_date"
+                                                name="execution_end_date">
+                                        </div>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Execution period is required.
+                                    </div>
+                                </div>
+                                <!-- <div class="mb-3">
+                                    <label for="liquidation-condition" class="form-label">清算條件</label>
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-auto">
+                                            <label for="executing_day" class="col-form-label">計畫執行天數</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="number" class="form-control" id="executing_day"
+                                                name="executing_day">
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="revenue_standard" class="col-form-label">收益未達金額</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="number" class="form-control" id="revenue_standard"
+                                                name="revenue_standard">
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">分潤條件 - 請輸入百分比數字 e.g. 40，三者總和為100%</label>
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-auto">
+                                            <label for="profitsharing_investor" col-form-label>投資人</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="form-control" id="profitsharing_investor"
+                                                name="profitsharing_investor">
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="profitsharing_initiator" col-form-label>發起人</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="form-control" id="profitsharing_initiator"
+                                                name="profitsharing_initiator">
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="profitsharing_platform" col-form-label>平台</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="form-control" id="profitsharing_platform"
+                                                name="profitsharing_platform">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">清算條件 - 計畫結束進行特定拍賣天數，未售出之拍賣品，發起人需自行買回剩餘商品。</label>
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-auto">
+                                            <label for="liquidation_time" class="col-form-label">拍賣執行天數</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="form-control" id="liquidation_time"
+                                                name="liquidation_time">
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="liquidation_discount" class="col-form-label">發起人買回商品之折扣數</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="form-control" id="liquidation_discount"
+                                                name="liquidation_discount">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="cover_image" class="form-label">募資計畫封面宣傳照片URL</label>
+                                    <input type="text" class="form-control" id="cover_image" name="cover_image"
+                                        placeholder="" required="required">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="product_number" class="form-label">預計募資之商品數</label>
+                                    <select class="form-select" aria-label="Default select example" id="product_number"
+                                        name="product_number" required="required">
+                                        <option selected value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="content" class="form-label">計畫內容</label>
+                                    <textarea class="form-control" id="content" name="content" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <div class="row" id="products_info">
+                                    <div class="col-md-3" id="product1_col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">項目 1</h5>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product1_title"
+                                                        name="product1_title" placeholder="項目名稱">
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product1_price"
+                                                        name="product1_price" placeholder="項目售價">
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product1_cost"
+                                                        name="product1_cost" placeholder="預計成本">
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product1_image"
+                                                        name="product1_image" placeholder="項目照片URL">
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <textarea class="form-control" id="product1_content" rows="3"
+                                                        name="product1_content" placeholder="項目簡介"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" id="product1_col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">項目 2</h5>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product2_title"
+                                                        name="product2_title" placeholder="項目名稱" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product2_price"
+                                                        name="product2_price" placeholder="項目售價" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product2_cost"
+                                                        name="product2_cost" placeholder="預計成本" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product2_image"
+                                                        name="product2_image" placeholder="項目照片URL" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <textarea class="form-control" id="product2_content" rows="3"
+                                                        name="product2_content" placeholder="項目簡介" disabled></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" id="product3_col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">項目 3</h5>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product3_title"
+                                                        name="product3_title" placeholder="項目名稱" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product3_price"
+                                                        name="product3_price" placeholder="項目售價" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product3_cost"
+                                                        name="product3_cost" placeholder="預計成本" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product3_image"
+                                                        name="product3_image" placeholder="項目照片URL" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <textarea class="form-control" id="product3_content" rows="3"
+                                                        name="product3_content" placeholder="項目簡介" disabled></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" id="product4_col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">項目 4</h5>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product4_title"
+                                                        name="product4_title" placeholder="項目名稱" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product4_price"
+                                                        name="product4_price" placeholder="項目售價" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product4_cost"
+                                                        name="product4_cost" placeholder="預計成本" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="product4_image"
+                                                        name="product4_image" placeholder="項目照片URL" disabled>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <textarea class="form-control" id="product4_content" rows="3"
+                                                        name="product4_content" placeholder="項目簡介" disabled></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <a class="w-100 btn btn-outline-primary btn-lg" href="/" id="">取消</a>
+                            </div>
+                            <div class="col">
+                                <button class="w-100 btn btn-primary btn-lg" type="submit">送出</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Modal -->
+<div class="modal fade" id="result-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">新增結果</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="result-msg">
+                Test
+            </div>
+            <div class="modal-footer">
+                <!-- <a class="btn btn-secondary" href="/">回首頁</a> -->
+                <a class="btn btn-primary" href="/web/member-info">個人頁面</a>
+                <a class="btn btn-outline-primary" href="" id="etherscan-link" target="_blank">Etherscan</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading -->
+<div id="overlay-loading">
+    <img src="/static/Spin.gif" alt="">
+</div>
+<script src='/static/js/index.js?{% now "U" %}'></script>
+<script src='/static/js/create-product-plan.js?{% now "U" %}'></script>
+
+{% endblock %}

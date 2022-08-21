@@ -1,0 +1,102 @@
+{% extends  'base.html' %}
+{% block main %}
+<main>
+    <section class="py-5 text-center container bg-light">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">歷史紀錄</h1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="text-center pt-5">
+                    <h1 class="display-6 title-underline">我的投資紀錄</h1>
+                </div>
+                <div class="col-10">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr class="table-primary">
+                                <th scope="col" style="width: 40%">計畫名稱</th>
+                                <th scope="col" style="width: 15%">計畫狀態</th>
+                                <th scope="col" style="width: 15%">產品名稱</th>
+                                <th scope="col" style="width: 10%">投資數量</th>
+                                <th scope="col" style="width: 20%">查看詳細資訊</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for invest in investments %}
+                            <tr>
+                                <td><a href="/web/{{invest.status}}-plan/{{invest.plan_id}}"
+                                        target="_blank">{{invest.plan_title}}</a></td>
+                                <td>{{invest.statusChinese}}</td>
+                                <td>{{invest.product_title}}</td>
+                                <td>{{invest.data_sum}}</td>
+                                <td><button type="button" class="btn btn-outline-primary btn-sm invest-detail-btns"
+                                        plan-id="{{invest.plan_id}}" product-id="{{invest.product_id}}"><i
+                                            class="fas fa-external-link-alt"></i></button>
+                                    {% if invest.statusChinese == '募資中' or invest.statusChinese == '執行中' %}
+                                    <a href="/web/transfer-invest-token/{{invest.plan_id}}/{{invest.product_id}}"
+                                        class="btn btn-outline-primary btn-sm">轉移投資憑證</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Modal -->
+<div class="modal fade" id="detail-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detail-modal-title">投資分潤紀錄</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="detail-modal-body">
+                <p>計畫名稱: <span id="plan-title-modal"></span></p>
+                <p>商品名稱: <span id="product-title-modal"></span></p>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr class="table-primary">
+                            <th scope="col">投資時間</th>
+                            <th scope="col">投資數量</th>
+                            <th scope="col">Etherscan URL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invest-record-body">
+
+                    </tbody>
+                </table>
+                <hr>
+                <p>分潤紀錄</p>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr class="table-primary">
+                            <th scope="col">計畫編號</th>
+                            <th scope="col">產品名稱</th>
+                            <th scope="col">分潤金額</th>
+                            <th scope="col">分潤時間</th>
+                        </tr>
+                    </thead>
+                    <tbody id="profit-record-body">
+                        <tr>
+                            <td colspan="4">計畫結束後進行分潤</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src='/static/js/index.js?{% now "U" %}'></script>
+<script src='/static/js/member-record.js?{% now "U" %}'></script>
+{% endblock %}
